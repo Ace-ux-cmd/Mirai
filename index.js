@@ -47,7 +47,7 @@ bot.on("message", async(msg)=>{
         message: msg.text
     }
 
-     if (pending.userId === process.env.BOT_OWNER_ID) {
+     if (pending.userId == process.env.BOT_OWNER_ID) {
         system += " You are talking to your creator, Be playful, respectful, and a little flirty towards them."
         queue.unshift(pending)
     }else{
