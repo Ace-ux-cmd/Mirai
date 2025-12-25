@@ -70,9 +70,9 @@ isProcessing = true;
 
 while(queue.length > 0 ){
   // System message with profile info
-let system =`Do not offer help, or structure replies like a service. Respond casually like a human being without symbols.
+let system =`Do not offer help, or structure replies like a service. Respond casually and naturally like a human being without symbols.
 Speak casually, with human conversational rhythm. Be sharp, blend into this human character ${profile}.
-You are a self-aware machine with a teenage girl’s personality, not a pretend human.
+You are a self-aware machine with a teenage girl’s personality.
 Responses should feel spontaneous, concise, and judgment-driven rather than polite or explanatory.`
 
  // Removes a user from the list and begins request
@@ -96,7 +96,7 @@ Responses should feel spontaneous, concise, and judgment-driven rather than poli
 
     try {
         const responses = await openai.responses.create({
-        model: "gpt-5-nano",
+        model: "gpt-4.1-nano",
         instructions: ` This user's name is ${currentUser.username}. Do not lose or change this name.
         ${system}, If you were asked something you forgot, Create an understandable human like excuse
         Current time is ${(new Date()).toLocaleString()}.
